@@ -1,0 +1,108 @@
+import random as r 
+
+#Global Variables 
+
+choices = ["Rock", "Paper", "Scissors"]
+user_choice = 0 
+cpu = r.choice(choices)
+player_score = 0
+cpu_score = 0
+print("Welcome to Rock Paper Scissors")
+
+
+for x in range(0,100):
+
+    cpu = r.choice(choices)
+    print("What do you choose ?")
+    print("(1) Rock")
+    print("(2) Paper")
+    print("(3) Scissors")
+    user_choice = int(input("Choice: "))
+
+    if user_choice == 1 and cpu == "Scissors":
+       print("CPU chose : " + cpu)
+       print("You won!")
+       player_score = player_score + 1
+       cpu_score = cpu_score 
+       print("The Score is : " + str(player_score) + "-" + str(cpu_score))
+       
+
+    elif user_choice == 1 and cpu == "Rock":
+       print("CPU chose : " + cpu) 
+       print("Its a Draw!")
+       player_score = player_score
+       cpu_score = cpu_score
+       print("The Score is : " + str(player_score) + "-" + str(cpu_score))
+       
+
+    elif user_choice == 1 and cpu == "Paper":
+       print("CPU chose : " + cpu) 
+       print("You lost!")
+       player_score = player_score 
+       cpu_score = cpu_score + 1
+       print("The Score is : " + str(player_score) + "-" + str(cpu_score))
+       
+
+    if user_choice == 2 and cpu == "Scissors":
+       print("CPU chose : " + cpu)
+       print("You lost!")
+       player_score = player_score
+       cpu_score = cpu_score + 1
+       print("The Score is : " + str(player_score) + "-" + str(cpu_score))
+       
+
+    elif user_choice == 2 and cpu == "Rock":
+       print("CPU chose : " + cpu) 
+       print("You Won!")
+       player_score = player_score + 1
+       cpu_score = cpu_score
+       print("The Score is : " + str(player_score) + "-" + str(cpu_score))
+       
+
+    elif user_choice == 2 and cpu == "Paper":
+       print("CPU chose : " + cpu) 
+       print("Its a Draw!")
+       player_score = player_score 
+       cpu_score = cpu_score
+       print("The Score is : " + str(player_score) + "-" + str(cpu_score))
+      
+
+    if user_choice == 3 and cpu == "Scissors":
+       print("CPU chose : " + cpu)
+       print("Its a Draw!")
+       player_score = player_score
+       cpu_score = cpu_score
+       print("The Score is : " + str(player_score) + "-" + str(cpu_score))
+     
+
+    elif user_choice == 2 and cpu == "Rock":
+       print("CPU chose : " + cpu) 
+       print("You lost!")
+       player_score = player_score
+       cpu_score = cpu_score + 1
+       print("The Score is : " + str(player_score) + "-" + str(cpu_score))
+       
+
+    elif user_choice == 2 and cpu == "Paper":
+       print("CPU chose : " + cpu) 
+       print("You Won!")
+       player_score = player_score + 1
+       cpu_score = cpu_score
+       print("The Score is : " + str(player_score) + "-" + str(cpu_score))
+     
+    if player_score == 3:
+        print("YOU WON THE GAME!!!!!!!")
+        quit()
+        
+    if cpu_score == 3:
+        print("YOU LOST THE GAME!!!!!!!!")
+        quit()
+    
+    print("-----------------")
+    print("")
+
+
+
+    
+
+
