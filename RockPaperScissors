@@ -43,7 +43,7 @@ for x in range(0,100):
        print("The Score is : " + str(player_score) + "-" + str(cpu_score))
        
 
-    if user_choice == 2 and cpu == "Scissors":
+    elif user_choice == 2 and cpu == "Scissors":
        print("CPU chose : " + cpu)
        print("You lost!")
        player_score = player_score
@@ -67,7 +67,7 @@ for x in range(0,100):
        print("The Score is : " + str(player_score) + "-" + str(cpu_score))
       
 
-    if user_choice == 3 and cpu == "Scissors":
+    elif user_choice == 3 and cpu == "Scissors":
        print("CPU chose : " + cpu)
        print("Its a Draw!")
        player_score = player_score
@@ -90,11 +90,11 @@ for x in range(0,100):
        cpu_score = cpu_score
        print("The Score is : " + str(player_score) + "-" + str(cpu_score))
      
-    if player_score == 3:
+    elif player_score == 3:
         print("YOU WON THE GAME!!!!!!!")
         quit()
         
-    if cpu_score == 3:
+    elif cpu_score == 3:
         print("YOU LOST THE GAME!!!!!!!!")
         quit()
     
