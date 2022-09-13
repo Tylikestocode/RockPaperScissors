@@ -7,88 +7,37 @@ user_choice = 0
 cpu = r.choice(choices)
 player_score = 0
 cpu_score = 0
+winnerWinnerChickenDinner = 0
 print("Welcome to Rock Paper Scissors")
+
+def WhoWins(playerChoice):
+    cpu = r.choice(choices)
+    print("CPU chose : " + cpu)
+    if choices[playerChoice] == cpu:
+        print("Its a Draw!")
+        return 0
+    if choices[(playerChoice + 1) % 3 ] == cpu:
+        print("You lost!")
+        return -1
+    print("You won!")
+    return 1
 
 
 for x in range(0,100):
 
     cpu = r.choice(choices)
     print("What do you choose ?")
-    print("(1) Rock")
-    print("(2) Paper")
-    print("(3) Scissors")
+    print("(0) Rock")
+    print("(1) Paper")
+    print("(2) Scissors")
     user_choice = int(input("Choice: "))
+    winnerWinnerChickenDinner = WhoWins(user_choice)
 
-    if user_choice == 1 and cpu == "Scissors":
-       print("CPU chose : " + cpu)
-       print("You won!")
-       player_score = player_score + 1
-       cpu_score = cpu_score 
-       print("The Score is : " + str(player_score) + "-" + str(cpu_score))
-       
-
-    elif user_choice == 1 and cpu == "Rock":
-       print("CPU chose : " + cpu) 
-       print("Its a Draw!")
-       player_score = player_score
-       cpu_score = cpu_score
-       print("The Score is : " + str(player_score) + "-" + str(cpu_score))
-       
-
-    elif user_choice == 1 and cpu == "Paper":
-       print("CPU chose : " + cpu) 
-       print("You lost!")
-       player_score = player_score 
-       cpu_score = cpu_score + 1
-       print("The Score is : " + str(player_score) + "-" + str(cpu_score))
-       
-
-    elif user_choice == 2 and cpu == "Scissors":
-       print("CPU chose : " + cpu)
-       print("You lost!")
-       player_score = player_score
-       cpu_score = cpu_score + 1
-       print("The Score is : " + str(player_score) + "-" + str(cpu_score))
-       
-
-    elif user_choice == 2 and cpu == "Rock":
-       print("CPU chose : " + cpu) 
-       print("You Won!")
-       player_score = player_score + 1
-       cpu_score = cpu_score
-       print("The Score is : " + str(player_score) + "-" + str(cpu_score))
-       
-
-    elif user_choice == 2 and cpu == "Paper":
-       print("CPU chose : " + cpu) 
-       print("Its a Draw!")
-       player_score = player_score 
-       cpu_score = cpu_score
-       print("The Score is : " + str(player_score) + "-" + str(cpu_score))
-      
-
-    elif user_choice == 3 and cpu == "Scissors":
-       print("CPU chose : " + cpu)
-       print("Its a Draw!")
-       player_score = player_score
-       cpu_score = cpu_score
-       print("The Score is : " + str(player_score) + "-" + str(cpu_score))
-     
-
-    elif user_choice == 2 and cpu == "Rock":
-       print("CPU chose : " + cpu) 
-       print("You lost!")
-       player_score = player_score
-       cpu_score = cpu_score + 1
-       print("The Score is : " + str(player_score) + "-" + str(cpu_score))
-       
-
-    elif user_choice == 2 and cpu == "Paper":
-       print("CPU chose : " + cpu) 
-       print("You Won!")
-       player_score = player_score + 1
-       cpu_score = cpu_score
-       print("The Score is : " + str(player_score) + "-" + str(cpu_score))
+    if winnerWinnerChickenDinner == 1:
+        player_score += 1
+    if winnerWinnerChickenDinner == -1:
+        cpu_score += 1
+    print("The Score is : " + str(player_score) + "-" + str(cpu_score))
      
     elif player_score == 3:
         print("YOU WON THE GAME!!!!!!!")
